@@ -18,6 +18,7 @@
 		}
 
 		public function __destruct(){
+		  $this->resource = $this->resource ?? false;
 			if($this->resource instanceof GdImage) {
 				imagedestroy($this->_resource);
 			}
