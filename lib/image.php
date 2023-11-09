@@ -288,6 +288,9 @@
 
 	// Check to see if the requested image needs to be generated or if a 304
 	// can just be returned to the browser to use it's cached version.
+	$_SERVER['HTTP_IF_MODIFIED_SINCE'] = $_SERVER['HTTP_IF_MODIFIED_SINCE'] ?? null;
+	$_SERVER['HTTP_IF_NONE_MATCH'] = $_SERVER['HTTP_IF_NONE_MATCH'] ?? null;
+	
 	if(CACHING === true && (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) || isset($_SERVER['HTTP_IF_NONE_MATCH']))){
 		if($_SERVER['HTTP_IF_MODIFIED_SINCE'] == $last_modified_gmt || str_replace('"', NULL, stripslashes($_SERVER['HTTP_IF_NONE_MATCH'])) == $etag){
 			Page::renderStatusCode(Page::HTTP_NOT_MODIFIED);

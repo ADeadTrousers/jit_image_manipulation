@@ -16,6 +16,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.49" date="2023-11-09" min="2.7.10" max="2.x.x">
+			- PHP8 Fixes for undefined indexes
+		</release>
 		<release version="1.48" date="2021-12-15" min="2.7.10" max="2.x.x">
 			- PHP8 Fixes (may require PHP7)
 		</release>
